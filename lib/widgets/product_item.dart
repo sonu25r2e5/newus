@@ -5,6 +5,8 @@ import '../providers/product.dart';
 import '../providers/cart.dart';
 
 class ProductItem extends StatelessWidget {
+  const ProductItem({super.key});
+
   // const ProductItem({
   //   super.key,
   //   required this.id,
@@ -18,8 +20,8 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   final product =  Provider.of<Product>(context, listen: false);
-   final cart = Provider.of<Cart>(context, listen: false);
+    final product = Provider.of<Product>(context, listen: false);
+    final cart = Provider.of<Cart>(context, listen: false);
     return ClipRRect(
       borderRadius: BorderRadius.circular(19),
       child: GridTile(
@@ -36,17 +38,19 @@ class ProductItem extends StatelessWidget {
                 product.toggleFavoriteStatus();
               },
               color: Theme.of(context).colorScheme.secondary,
-              icon:  Icon(product.isFavorite ? Icons.favorite : Icons.favorite_border),
+              icon: Icon(
+                  product.isFavorite ? Icons.favorite : Icons.favorite_border),
             ),
             backgroundColor: Colors.black54,
+            subtitle: Text('\$${product.price}'),
             title: Text(
               product.title,
               textAlign: TextAlign.center,
             )),
         child: GestureDetector(
           onTap: () {
-            Navigator.of(context)
-                .pushNamed(ProductDetailScreen.routeName, arguments: product.id);
+            Navigator.of(context).pushNamed(ProductDetailScreen.routeName,
+                arguments: product.id);
           },
           child: Image.network(
             product.imageUrl,

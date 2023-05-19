@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:newus/providers/cart.dart';
+import 'package:newus/screens/cart_screen.dart';
 import 'package:provider/provider.dart';
 import '../widgets/products_grid.dart';
-import '../widgets/badge.dart' as badge;
+import '../widgets/app_drawer.dart';
 
 enum FilterOptions {
   Favorites,
@@ -10,12 +11,14 @@ enum FilterOptions {
 }
 
 class ProductsOverviewScreen extends StatefulWidget {
+  const ProductsOverviewScreen({super.key});
+
   @override
   State<ProductsOverviewScreen> createState() => _ProductsOverviewScreenState();
 }
 
 class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
-  var _showOnlyFavorites = false;
+  // var _showOnlyFavorites = false;
 
   @override
   Widget build(BuildContext context) {
@@ -38,27 +41,30 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
             icon: const Icon(Icons.more_vert),
             itemBuilder: (_) => [
               const PopupMenuItem(
-                child: Text('Only Favorites'),
                 value: FilterOptions.Favorites,
+                child: Text('Only Favorites'),
               ),
               const PopupMenuItem(
-                child: Text('Show all'),
                 value: FilterOptions.All,
+                child: Text('Show all'),
               ),
             ],
           ),
           Consumer<Cart>(
             builder: (_, cart, ch) => Badge(
+              label: Text(cart.itemCount.toString()),
               child: ch,
-           
             ),
             child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.shopping_cart),
+              onPressed: () {
+                Navigator.of(context).pushNamed(CartScreen.routeName);
+              },
+              icon: const Icon(Icons.shopping_cart),
             ),
           ),
         ],
-      ), // how the gird show be structure.
+      ),
+      drawer: const AppDrawer(), // how the gird show be structure.
       body: ProductGrid(_showOnlyFavorites),
     );
   }
