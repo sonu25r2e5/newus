@@ -28,6 +28,16 @@ class ProductItem extends StatelessWidget {
         footer: GridTileBar(
             trailing: IconButton(
               onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: const Text(
+                    'Added item to cart',
+                    textAlign: TextAlign.center,
+                  ),
+                  action: SnackBarAction(label: 'Undo', onPressed: () {}),
+                  duration: const Duration(
+                    seconds: 2,
+                  ),
+                ));
                 cart.addItem(product.id, product.price, product.title);
               },
               icon: const Icon(Icons.shopping_bag),

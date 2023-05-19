@@ -49,34 +49,34 @@ class Products with ChangeNotifier {
         imageUrl:
             'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
         title: 'Half pants'),
-    // Product(
-    //     id: 'p7',
-    //     description: "ther are needed in windter",
-    //     price: 22,
-    //     imageUrl:
-    //         'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
-    //     title: 'Half pants'),
-    // Product(
-    //     id: 'p8',
-    //     description: "ther are needed in windter",
-    //     price: 233,
-    //     imageUrl:
-    //         'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
-    //     title: 'Half pants'),
-    // Product(
-    //     id: 'p9',
-    //     description: "ther are needed in windter",
-    //     price: 22,
-    //     imageUrl:
-    //         'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
-    //     title: 'Half pants'),
-    // Product(
-    //     id: 'p10',
-    //     description: "ther are needed in windter",
-    //     price: 23,
-    //     imageUrl:
-    //         'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
-    //     title: 'Half pants'),
+    Product(
+        id: 'p7',
+        description: "ther are needed in windter",
+        price: 22,
+        imageUrl:
+            'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
+        title: 'Half pants'),
+    Product(
+        id: 'p8',
+        description: "ther are needed in windter",
+        price: 233,
+        imageUrl:
+            'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
+        title: 'Half pants'),
+    Product(
+        id: 'p9',
+        description: "ther are needed in windter",
+        price: 22,
+        imageUrl:
+            'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
+        title: 'Half pants'),
+    Product(
+        id: 'p10',
+        description: "ther are needed in windter",
+        price: 23,
+        imageUrl:
+            'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
+        title: 'Half pants'),
   ];
 
   // var _showFavoritesOnly = false;
