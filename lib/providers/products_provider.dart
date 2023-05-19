@@ -79,10 +79,10 @@ class Products with ChangeNotifier {
         title: 'Half pants'),
   ];
 
-  // var _showFavoritesOnly = false;
+  // var _showfavoritesOnly = false;
 
   List<Product> get items {
-    //   if (_showFavoritesOnly) {
+    //   if (_showfavoritesOnly) {
     //     return _items.where((prodItem) => prodItem.isFavorite).toList();
     //   }
     return [..._items]; // .......sperator operator
@@ -99,13 +99,13 @@ class Products with ChangeNotifier {
     return _items.firstWhere((prod) => prod.id == id);
   }
 
-  // void showFavoritesOnly(){
-  //   _showFavoritesOnly = true;
+  // void showfavoritesOnly(){
+  //   _showfavoritesOnly = true;
   //    notifyListeners();
   // }
 
   // void showAll(){
-  //   _showFavoritesOnly = false;
+  //   _showfavoritesOnly = false;
   //  notifyListeners();
   // }
 

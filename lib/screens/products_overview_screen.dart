@@ -6,8 +6,8 @@ import '../widgets/products_grid.dart';
 import '../widgets/app_drawer.dart';
 
 enum FilterOptions {
-  Favorites,
-  All,
+  favorites,
+  all,
 }
 
 class ProductsOverviewScreen extends StatefulWidget {
@@ -18,11 +18,11 @@ class ProductsOverviewScreen extends StatefulWidget {
 }
 
 class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
-  // var _showOnlyFavorites = false;
+  // var _showOnlyfavorites = false;
 
   @override
   Widget build(BuildContext context) {
-    var showOnlyFavorites = false;
+    var showOnlyfavorites = false;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -31,21 +31,21 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
           PopupMenuButton(
             onSelected: (FilterOptions selectedValue) {
               setState(() {
-                if (selectedValue == FilterOptions.Favorites) {
-                  showOnlyFavorites = true;
+                if (selectedValue == FilterOptions.favorites) {
+                  showOnlyfavorites = true;
                 } else {
-                  showOnlyFavorites = false;
+                  showOnlyfavorites = false;
                 }
               });
             },
             icon: const Icon(Icons.more_vert),
             itemBuilder: (_) => [
               const PopupMenuItem(
-                value: FilterOptions.Favorites,
-                child: Text('Only Favorites'),
+                value: FilterOptions.favorites,
+                child: Text('Only favorites'),
               ),
               const PopupMenuItem(
-                value: FilterOptions.All,
+                value: FilterOptions.all,
                 child: Text('Show all'),
               ),
             ],
@@ -65,7 +65,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
         ],
       ),
       drawer: const AppDrawer(), // how the gird show be structure.
-      body: ProductGrid(showOnlyFavorites),
+      body: ProductGrid(showOnlyfavorites),
     );
   }
 }

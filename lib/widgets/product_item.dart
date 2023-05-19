@@ -50,7 +50,7 @@ class ProductItem extends StatelessWidget {
             ),
             leading: IconButton(
               onPressed: () {
-                product.toggleFavoriteStatus();
+                product.togglefavoritestatus();
               },
               color: Theme.of(context).colorScheme.secondary,
               icon: Icon(
