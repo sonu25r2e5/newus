@@ -25,7 +25,6 @@ class _EditProductScreenState extends State<EditProductScreen> {
   @override
   void initState() {
     _imageUrlFocusNode.addListener(_updateImageUrl);
-    // TODO: implement initState
     super.initState();
   }
 
@@ -42,7 +41,6 @@ class _EditProductScreenState extends State<EditProductScreen> {
   @override
   void dispose() {
     _imageUrlFocusNode.removeListener(_updateImageUrl);
-    // TODO: implement dispose
     _priceFocusNode.dispose();
     _descriptionFocusNode.dispose();
     super.dispose();
@@ -129,7 +127,8 @@ class _EditProductScreenState extends State<EditProductScreen> {
                   ),
                   Expanded(
                     child: TextFormField(
-                        decoration: const InputDecoration(labelText: 'Image Url'),
+                        decoration:
+                            const InputDecoration(labelText: 'Image Url'),
                         keyboardType: TextInputType.url,
                         textInputAction: TextInputAction.done,
                         controller: _imageUrlController,
