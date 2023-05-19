@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
           )),
           colorScheme: const ColorScheme.light(
             secondary: Colors.yellow,
-            primary: Colors.black,
+            primary: Colors.purple,
           ),
         ),
         home: const ProductsOverviewScreen(),
