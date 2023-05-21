@@ -35,48 +35,7 @@ class Products with ChangeNotifier {
         imageUrl:
             'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
         title: 'Half pants'),
-    Product(
-        id: 'p5',
-        description: "ther are needed in windter",
-        price: 66,
-        imageUrl:
-            'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
-        title: 'Half pants'),
-    Product(
-        id: 'p6',
-        description: "ther are needed in windter",
-        price: 60,
-        imageUrl:
-            'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
-        title: 'Half pants'),
-    Product(
-        id: 'p7',
-        description: "ther are needed in windter",
-        price: 22,
-        imageUrl:
-            'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
-        title: 'Half pants'),
-    Product(
-        id: 'p8',
-        description: "ther are needed in windter",
-        price: 233,
-        imageUrl:
-            'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
-        title: 'Half pants'),
-    Product(
-        id: 'p9',
-        description: "ther are needed in windter",
-        price: 22,
-        imageUrl:
-            'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
-        title: 'Half pants'),
-    Product(
-        id: 'p10',
-        description: "ther are needed in windter",
-        price: 23,
-        imageUrl:
-            'https://www.marknepal.com/wp-content/uploads/2020/06/FB_IMG_1592014577528.jpg',
-        title: 'Half pants'),
+
   ];
 
   // var _showfavoritesOnly = false;
@@ -109,9 +68,34 @@ class Products with ChangeNotifier {
   //  notifyListeners();
   // }
 
-  void addProduct() {
+  void addProduct(Product product) {
+    final newProduct = Product(
+      id: DateTime.now().toString(),
+      description: product.description,
+      price: product.price,
+      imageUrl: product.imageUrl,
+      title: product.title,
+    );
+    _items.add(newProduct);
     // _items.add(value);
     notifyListeners(); // establish a communication channel within
+  }
+
+  void deleteProduct(String id) {}
+
+  void updateProduct(String id, Product newProduct) {
+    final prodIndex = _items.indexWhere((prod) => prod.id == id);
+    if (prodIndex >= 0) {
+      _items[prodIndex] == newProduct;
+      notifyListeners();
+    } else {
+      print('..');
+    }
+
+    void deleteProduct(String id) {
+      _items.removeWhere((prod) => prod.id == id);
+      notifyListeners(); // to update all the place
+    }
   }
 }
 
